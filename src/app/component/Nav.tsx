@@ -25,7 +25,9 @@ export default function Navbar() {
   };
 
   return (
+  
     <div>
+     
       <header className="w-full h-[80px] flex justify-center items-center border-b-2 bg-white">
         <nav className="w-[90%] h-full flex flex-wrap p-2 justify-between items-center mx-auto">
           {/* Logo Section */}
@@ -87,17 +89,19 @@ export default function Navbar() {
           </Sheet>
 
           {/* Search and Icons Section */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center space-x-6">
+            <div className=" hidden lg:flex items-center bg-gray-100 rounded-md px-3 py-2">   
+            
             {/* Search Input */}
             <input
               type="text"
               id="hero-field"
               name="hero-field"
-              placeholder="Search"
-              className="w-full bg-gray-100 rounded border bg-opacity-50 border-gray-300 focus:ring-2 focus:ring-indigo-200 focus:bg-transparent focus:border-indigo-500 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              placeholder="What are you looking for?"
+              className=" bg-gray-100 focus:ring-2 focus:ring-indigo-200 focus:bg-transparent focus:border-indigo-100 text-base outline-none leading-8 transition-colors duration-200 ease-in-out"
             />
-            <CiSearch className="text-3xl bg-gray-100 rounded border bg-opacity-50 border-gray-300 focus:ring-2" />
-
+            <CiSearch className="h-8 w-8"/>
+            </div>
             {/* Icons */}
             <IoIosHeartEmpty className="text-3xl" />
             <MdOutlineShoppingCart className="text-3xl" />

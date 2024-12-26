@@ -1,5 +1,7 @@
 
 import Image from "next/image";
+import Link from "next/link";
+
 
 const Best = () => {
   return (
@@ -129,12 +131,14 @@ const Best = () => {
 
       {/* Button Section */}
       <div className="h-14 flex justify-center items-center mt-8">
-        <button
+      <Link href={"/wishList"}>
+      <button 
           id="btn"
           className="text-white font-bold h-14 px-8 bg-red-600 hover:bg-gray-300 hover:text-blue-600 transition-all duration-300 "
         >
           View All Products
         </button>
+      </Link>
       </div>
     </div>
   </div>

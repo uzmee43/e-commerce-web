@@ -1,50 +1,75 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { FaApple } from "react-icons/fa";
 import { GoArrowRight } from "react-icons/go";
+import { IoIosArrowForward } from "react-icons/io";
 
-const Hero = () => {
+export default function Hero() {
   return (
-    <section className="text-gray-600 body-font bg-black mt-7 mx-auto mb-20 pt-[60px] px-4 md:px-10">
-  <div className="container mx-auto flex flex-col md:flex-row items-center">
-    {/* Left Content Section */}
-    <div className="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-10 md:mb-0 items-center text-center">
-      <div className="flex justify-center items-center text-white mb-6">
-        <FaApple className="text-4xl md:text-6xl" />
-        <span className="ml-4 text-xl md:text-2xl">iPhone 14 Series</span>
-      </div>
-
-      <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-white">
-        Up to 10% <br />
-        off Voucher
-      </h1>
-
-      {/* Button Section */}
-      <div className="flex justify-center md:justify-start">
-        <button className="inline-flex py-3 px-5 rounded-lg items-center bg-gray-700 hover:bg-gray-200 focus:outline-none">
-          <span className="ml-4 flex items-start flex-col leading-none">
-            <span className="flex gap-2 items-center text-white hover:text-black">
-              Shop Now
-              <GoArrowRight className="mt-1" />
-            </span>
-          </span>
-        </button>
-      </div>
+    <div className=" flex justify-center items-center px-10">
+      <div className="max-w-[1440px] flex gap-6 justify-center">
+        {/* Left Content Section */}
+        <div className=" border-r-2 border-neutral-200 p-10 hidden md:block">
+          <ul className=" space-y-2">
+            {[
+              "Woman’sFashion",
+              "Men’s Fashion",
+              "Electronics",
+              "Home & Lifestyle",
+              "Medicine",
+              "Sports & Outdoor",
+              "Baby’s & Toys",
+              "Groceries & Pets",
+              "Health & Beauty",
+            ].map((item, index) => (
+              <li
+                key={index}
+                className=" flex justify-between items-center text-slate-800 leading-loose hover:underline cursor-pointer hover:text-blue-500 transition-all duration-150"
+              >
+                <span>{item}</span>
+                {index < 2 && <IoIosArrowForward />}
+              </li>
+            ))}
+          </ul>
+        </div>
+        {/* right side */}
+        <div className=" bg-black flex items-center rounded-lg p-6 px-10 pt-5 mt-10">
+  <div className="flex flex-col space-y-5 justify-center sm:w-[180px] md:w-[300px] lg:w-[400px] text-white">
+    <div className="flex items-center gap-2">
+      <FaApple className=" sm:text-5xl md:text-5xl" />
+      <span className="sm:text-2xl md:text-base font-semibold">iPhone 14 Series</span>
     </div>
-
+  <h1 className="sm:text-2xl md:text-4xl lg:text-5xl font-bold leading-snug text-white">
+   Up to 10% off Voucher 
+  </h1>
+  <Link
+    href={"products"}
+    className=" underline underline-offset-4 hover:font-semibold items-center gap-2 sm:text-sm md:text-sm lg:text-2xl"
+  >
+   Shop Now
+   <GoArrowRight className="" />
+    
+  </Link>
+  </div>
     {/* Right Image Section */}
-    <div className="lg:max-w-lg lg:w-full md:w-1/2 w-full mt-8 md:mt-0">
-      <Image
-        className="object-cover object-center rounded"
+    <div className="ml-auto ">
+     <Image
+
         alt="hero"
         src={require("./../../../public/hero.png")}
       />
     </div>
-  </div>
-</section>
+  
 
+  
+</div>
+
+
+
+      </div>
+    </div>
   );
-};
+}
 
-export default Hero;
